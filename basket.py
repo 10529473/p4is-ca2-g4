@@ -23,9 +23,19 @@ github repository: https://github.com/10529473/p4is-ca1
 """
 
 class Basket:
-    def __init_(self, product_list, discont_list):
-        self.product_list = product_list
-    
+    def __init__(self, product_price_arr):
+        self.product_price_arr = product_price_arr
+        
+    def getProductList(self):
+        return self.product_price_arr
+
+    def sortProductList(self):
+        n = len(product_price_arr) 
+  
+        for i in range(n): 
+            for j in range(0, n-i-1): 
+                if self.product_price_arr[j] > arr[j+1] : 
+                    arr[j], arr[j+1] = arr[j+1], arr[j] 
 
 """
 [
@@ -48,3 +58,10 @@ class Basket:
     }   
 ]
  """
+ 
+#%%
+b1 = Basket([{'desc':'egg','price':10},{'desc':'rice','price':5},{'desc':'flour','price':20}])
+test = b1.getProductList()
+
+
+
