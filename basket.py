@@ -33,10 +33,8 @@ class Basket:
 
         if discount_code is not None:
             for p in arr:
-                pass
-                #print(p['price'] * self.discount_arr['eggs20'].get([p['desc']]))
-                #arr[k]= v * self.discount_arr['eggs20'][v]
-            
+                p['price'] = p['price'] * self.discount_arr[discount_code].get(p['desc'],1)
+
         return arr
 
     def sortProductList(self):
@@ -50,33 +48,8 @@ class Basket:
                     arr[j], arr[j+1] = arr[j+1], arr[j]
         
         return arr
-
-"""
-[
-    {
-        desc: egg,
-        price: 10
-        discont:
-            {
-                eggs20: 0.8
-                eggs30: 0.7
-            }
-    },
-    {
-        desc: rice,
-        price: 10
-        discont:
-            {
-                eggs20: 0.8
-            }
-    }   
-]
- """
- 
 #%%
 b1 = Basket([{'desc':'eggs','price':10},{'desc':'rice','price':5},{'desc':'flour','price':20}],
             {'eggs20':{'eggs':0.8}})
-test = b1.getProductList()
 
-
-
+print(b1.getProductList())
