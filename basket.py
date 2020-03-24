@@ -31,6 +31,11 @@ standard_price = {
 discount = {
     'eggs20': {
         'eggs':0.8
+        },
+    '40off': {
+        'eggs':0.6,
+        'rice':0.6,
+        'flour':0.6
         }
     }
 
@@ -62,3 +67,22 @@ b1 = Basket({'eggs':2, 'rice':13, 'flour':1})
 
 print(b1.getProductValue())
 print(b1.sortProductList())
+print('-' * 20)
+
+b1 = Basket({'eggs':2, 'rice':13, 'flour':1},'eggs20')
+
+print(b1.getProductValue())
+print(b1.sortProductList())
+print('-' * 20)
+
+b3 = Basket({'rice':7, 'flour':4})
+
+print(b3.getProductValue())
+print(b3.sortProductList())
+print('-' * 20)
+
+b4 = Basket({'eggs':4, 'rice':2, 'flour':6},'40off')
+
+print(b4.getProductValue())
+print(b4.sortProductList())
+print('-' * 20)
