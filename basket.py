@@ -1,4 +1,8 @@
-# p4is-ca1
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 24 09:05:33 2020
+
+@author: waraujo
 
 Please code a solution to the following problem, tracking your progress by
 commiting to GitHub, and submitting your progress after half an hour and after
@@ -14,3 +18,33 @@ discount codes, each of which confers a certain percentage discount for a list
 
 Produce a method which accepts a list of baskets, and outputs their values
 from highest to lowest.
+
+github repository: https://github.com/10529473/p4is-ca1
+"""
+
+class Basket:
+    def __init_(self, product_list, discont_list):
+        self.product_list = product_list
+    
+
+"""
+[
+    {
+        desc: egg,
+        price: 10
+        discont:
+            {
+                eggs20: 0.8
+                eggs30: 0.7
+            }
+    },
+    {
+        desc: rice,
+        price: 10
+        discont:
+            {
+                eggs20: 0.8
+            }
+    }   
+]
+ """
