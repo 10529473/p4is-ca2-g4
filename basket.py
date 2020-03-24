@@ -25,13 +25,15 @@ github repository: https://github.com/10529473/p4is-ca1
 class Basket:
     def __init__(self, product_price_arr, discount_arr):
         self.product_price_arr = product_price_arr
+        self.discount_arr = discount_arr
+        
         
     def getProductList(self,discount_code=None):
         arr = list(self.product_price_arr)
         
         if discount_code is not None:
             for k,v in arr:
-                arr[k]=v*discount_arr['egg20'][k]
+                arr[k]= v * discount_arr['eggs20'][k]
             
         return arr
 
@@ -70,7 +72,8 @@ class Basket:
  """
  
 #%%
-b1 = Basket([{'desc':'egg','price':10},{'desc':'rice','price':5},{'desc':'flour','price':20}])
+b1 = Basket([{'desc':'egg','price':10},{'desc':'rice','price':5},{'desc':'flour','price':20}],
+            {'eggs20':{'eggs':0.8}})
 test = b1.getProductList()
 
 
