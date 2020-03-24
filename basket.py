@@ -35,16 +35,15 @@ discount = {
     }
 
 class Basket:
-    def __init__(self, product_quantity):
+    def __init__(self, product_quantity,discount_code=None):
         self.product_quantity = product_quantity
+        self.discount_code = discount_code
         
-        
-    def getProductList(self,discount_code=None):
-        arr = list(self.product_price_arr)
+    def getProductValue(self):
+        arr = dict(self.product_quantity)
 
-        if discount_code is not None:
-            for p in arr:
-                p['price'] = p['price'] * self.discount_arr[discount_code].get(p['desc'],1)
+        for k,v in arr.items():
+            arr[k] = v * standard_price.get(k) * discount.get(self.discount_code,{}).get(k,1)
 
         return arr
 
@@ -61,6 +60,6 @@ class Basket:
         return arr
 #%%
 
-b1 = Basket(product_price_arr,discount_arr)
+b1 = Basket({'eggs':2, 'rice':3, 'flour':1})
 
-print(b1.getProductList())
+print(b1.getProductValue())
