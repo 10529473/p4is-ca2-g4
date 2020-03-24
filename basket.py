@@ -22,10 +22,21 @@ from highest to lowest.
 github repository: https://github.com/10529473/p4is-ca1
 """
 
+standard_price = {
+    'eggs':10,
+    'rice':5,
+    'flour':20
+    }
+
+discount = {
+    'eggs20': {
+        'eggs':0.8
+        }
+    }
+
 class Basket:
-    def __init__(self, product_price_arr, discount_arr):
-        self.product_price_arr = product_price_arr
-        self.discount_arr = discount_arr
+    def __init__(self, product_quantity):
+        self.product_quantity = product_quantity
         
         
     def getProductList(self,discount_code=None):
@@ -49,7 +60,7 @@ class Basket:
         
         return arr
 #%%
-b1 = Basket([{'desc':'eggs','price':10},{'desc':'rice','price':5},{'desc':'flour','price':20}],
-            {'eggs20':{'eggs':0.8}})
+
+b1 = Basket(product_price_arr,discount_arr)
 
 print(b1.getProductList())
