@@ -48,18 +48,17 @@ class Basket:
         return arr
 
     def sortProductList(self):
-        arr = list(self.product_price_arr)
-        
-        n = len(arr) 
+        arr = [[k,v] for k,v in self.getProductValue().items()]
+        n = len(arr)
   
         for i in range(n): 
             for j in range(0, n-i-1): 
-                if arr[j]['price'] < arr[j+1]['price'] : 
+                if arr[j][1] < arr[j+1][1] : 
                     arr[j], arr[j+1] = arr[j+1], arr[j]
-        
         return arr
 #%%
 
-b1 = Basket({'eggs':2, 'rice':3, 'flour':1})
+b1 = Basket({'eggs':2, 'rice':13, 'flour':1})
 
 print(b1.getProductValue())
+print(b1.sortProductList())
