@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+        <p>Hello {{request.user.username}} | <a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+        <p><a href="{% url 'register' %}">Register</a> | <a href="{% url 'login' %}">Login</a></p>
+    {% endif %}
+    <hr>
+
+    {% block content %}
+    
+    {% endblock content %}
+
+    <hr>
+    <p>@ 2020</p>
+</body>
+</html>
