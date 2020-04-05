@@ -1,5 +1,20 @@
 # CA_TWO_(70%)
----
+
+**Group:** 4
+
+**Members:**
+* Joel Dsouza (10523462)
+* Srimukhi Kavuri (10542603)
+* Willian Araujo (10529473)
+
+**Project:** Online Fashion Store
+
+> Python, MySQL, Django
+
+**GitHub Repository:** <https://github.com/10529473/p4is-ca2-g4.git>
+
+## Brief
+
 Create an Information System for a selected domain of interest. 
 
 You may use any back-end, including a DB developed in another module. 
