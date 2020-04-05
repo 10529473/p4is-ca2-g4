@@ -32,7 +32,7 @@ def login_view(request):
 	user = request.user
 	if user.is_authenticated:
 		return redirect('home')
-	
+
 	if request.POST:
 		form = AccountAuthenticationForm(request.POST)
 		if form.is_valid():
