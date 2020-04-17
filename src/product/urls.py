@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     # ex: /product/
-    path('', views.print_product_list, name='product'),
+    path('', views.print_product_list, name='home'),
     
     # TODO: Make product list filter
     # # ex: /polls/5/
