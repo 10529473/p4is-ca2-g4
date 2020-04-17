@@ -32,9 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # My apps	
-    'personal',	
-    'account',	
-    #'blog',	
+    'account',
+    'product',
     
     # django apps
     'django.contrib.admin',
@@ -126,20 +125,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-# TODO
-# # Static files (CSS, JavaScript, Images)
-# # https://docs.djangoproject.com/en/2.2/howto/static-files/
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-#     os.path.join(BASE_DIR, 'media'),
-# ]
-# STATIC_URL = '/static/'
-# MEDIA_URL = '/media/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
-# TEMP = os.path.join(BASE_DIR, 'temp')
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'media'),
+]
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
