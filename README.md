@@ -9,9 +9,35 @@
 
 **Project:** Online Fashion Store
 
-> Python, MySQL, Django
+Technology used:
+HTML : page layout has been designed
+CSS : used for designing part
+CSS Bootstrap : CSS framework used  for table system
+Python : All the business logic has been implemented 
+SQLite : database has been used 
+Django : project developed over the Django web Framework
+
+Windows: the system has easily be configured on windows OS. For running this, we  need
+Python 3, Django 3.0
+
+
+User Module: aim is to provide all the functionality related to users. 
+Here admin can act each and every role on data and customers can able to see their data.
+Product Module : aim is to manage the product data wise
+Account Module : aim is to controls the user:  like user registry
+Product Type : aim is to manage the product type
+Product Listing : aim is to manage the product display list, managed by user
+
+Manage user: Adding new user, edit the existing customer, view details of the customer.
+Manage product: Adding new product, Edit the existing product, view details of the product and listing of all the product.
+Manage product categories  : Adding new product type, Edit the existing one, View details of product type and listing of all order
+
+
 
 **GitHub Repository:** <https://github.com/10529473/p4is-ca2-g4.git>
+
+
+ *** Technical Report https://mydbs-my.sharepoint.com/personal/10542603_mydbs_ie/_layouts/15/onedrive.aspx
 
 ## Brief
 
@@ -40,4 +66,8 @@ There will be a presentation at the end of the Semester, with the Moderator pres
 Technical questions may be asked of any member of the group, and the assignment is individually marked. The contribution reports and Git record may be used to direct questions and to allocate marks.
 
 * All groups must submit a group report, containing individual contribution reports and a link to public Git repository.
+<<<<<<< HEAD
 * All individuals must submit a reflective report on their experience of the group, assignment, and module.
+=======
+* All individuals must submit a reflective report on their experience of the group, assignment, and module.
+>>>>>>> ebefd3e3312a60036897879015025ed51c52fea7
