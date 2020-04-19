@@ -49,3 +49,9 @@ class Product(models.Model):
     def categoryBreadcrumbs(self):
         return ' > '.join(
             self.category.all().order_by('-level').values_list('title',flat=True))
+
+class Cart(models.Model):
+    productList = []
+    
+    def addProduct(self,product = Product):
+        self.productList.append(product)
