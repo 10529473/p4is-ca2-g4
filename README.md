@@ -12,6 +12,7 @@
 > Python, MySQL, Django
 
 **GitHub Repository:** <https://github.com/10529473/p4is-ca2-g4.git>
+ *** Technical Report https://mydbs-my.sharepoint.com/personal/10542603_mydbs_ie/_layouts/15/onedrive.aspx
 
 ## Brief
 
