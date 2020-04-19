@@ -1,0 +1,12 @@
+<li class="nav-item dropdown">
+    <a id="dropdowntree" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        class="nav-link dropdown-toggle">{{category.title}}</a>
+    {% if category.subcategories %}
+        <ul aria-labelledby="dropdowntree" class="dropdown-menu border-0 shadow">
+            {% for category in category.subcategories %}
+                {% include 'product/snippets/treeview.html' %}
+            {% endfor %}
+        </ul>
+        <!-- <li class="dropdown-divider"></li> -->
+    {% endif %}
+</li>

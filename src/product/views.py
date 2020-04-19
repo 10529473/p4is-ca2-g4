@@ -1,8 +1,11 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Product
+from .models import Product, Category
 
 def print_product_list(request):
-    context = {'products':Product.objects.all()}
+    context = {
+        'products':Product.objects.all(),
+        'categoryTree':Category.getTree(),
+    }
     
     return render(request,"product/product.html",context)
 

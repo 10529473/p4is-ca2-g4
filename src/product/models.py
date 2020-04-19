@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
+from django.core import serializers
+import json
 
 
 class Category(models.Model):
@@ -25,11 +27,16 @@ class Category(models.Model):
         return parents
 
     def getTree():
+        json_data = serializers.serialize("json", Category.objects.all())
+        data = {i['pk']:i['fields'] for i in json.loads(json_data)}
         category_tree = []
-        topLevel = Category.objects.all().order_by('-level').first().level
-
-        Category.objects.filter(level=topLevel)
-
+        for k,v in data.items():
+            v['subcategories']=[data[subcategory] for subcategory in v['subcategories']]
+            v['id']=k
+            if v['level']==1:
+                category_tree.append(v)
+        return category_tree
+                
 
 class Product(models.Model):
     title = models.CharField(max_length=200)
