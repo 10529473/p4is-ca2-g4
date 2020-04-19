@@ -24,6 +24,12 @@ Account Module : aim is to controls the user:  like user registry
 Product Type : aim is to manage the product type
 Product Listing : aim is to manage the product display list, managed by user
 
+Manage user: Adding new user, edit the existing customer, view details of the customer.
+Manage product: Adding new product, Edit the existing product, view details of the product and listing of all the product.
+Manage product categories  : Adding new product type, Edit the existing one, View details of product type and listing of all order
+
+
+
 **GitHub Repository:** <https://github.com/10529473/p4is-ca2-g4.git>
 
 
