@@ -24,7 +24,7 @@
     }
 </style>
 
-
+<!-- Taken from https://bootstrapious.com/p/bootstrap-multilevel-dropdown -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
     <div class="container">
         <div id="navbarContent" class="collapse navbar-collapse">
@@ -34,35 +34,16 @@
                     <a id="dropdowntree" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         class="nav-link dropdown-toggle">Categories</a>
                     <ul aria-labelledby="dropdowntree" class="dropdown-menu border-0 shadow">
-                        <li class="dropdown-submenu">
-                            <!-- check it it has subcategories -->
-                            <a id="dropdowntree" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" class="dropdown-item dropdown-toggle">{{category.title}}</a>
-                            <ul aria-labelledby="dropdowntree" class="dropdown-menu border-0 shadow">
-                                <li>
-                                    <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
-                                </li>
-
-                        {{category.title}}
-                <!-- loop treeview -->
-                
-                {% if category.subcategories %}
-                    <ul aria-labelledby="dropdowntree" class="dropdown-menu border-0 shadow">
-                        {% for category in category.subcategories %}
-                            {% include 'product/snippets/treeview.html' %}
+                        {% for category in categoryTree %}
+                            <li class="dropdown-submenu">
+                                
+                                <!-- check it it has subcategories -->
+                                <!-- loop here -->
+                                {% include 'product/snippets/treeview.html' %}
+                            </li>
                         {% endfor %}
                     </ul>
-                    <!-- <li class="dropdown-divider"></li> -->
-                {% endif %}
-                
-                
-                
-                {% for category in categoryTree %}
-                    <li class="nav-item dropdown">
-                        <a id="dropdowntree" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            class="nav-link dropdown-toggle">{{category.title}}</a>
-                        {% include 'product/snippets/treeview.html' %}
-                {% endfor %}
+                </li>
             </ul>
         </div>
     </div>
@@ -101,13 +82,16 @@
             event.preventDefault();
             event.stopPropagation();
 
-            $(this).siblings().toggleClass("show");
+            $(this).next().toggleClass("show");
 
 
             if (!$(this).next().hasClass('show')) {
                 $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
             }
             $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+                $('.dropdown-submenu .show').removeClass("show");
+            });
+            $(this).nextAll().on('hidden.bs.dropdown', function (e) {
                 $('.dropdown-submenu .show').removeClass("show");
             });
 

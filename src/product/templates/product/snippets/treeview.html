@@ -1,12 +1,15 @@
-<li class="nav-item dropdown">
-    <a id="dropdowntree" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-        class="nav-link dropdown-toggle">{{category.title}}</a>
-    {% if category.subcategories %}
-        <ul aria-labelledby="dropdowntree" class="dropdown-menu border-0 shadow">
-            {% for category in category.subcategories %}
-                {% include 'product/snippets/treeview.html' %}
-            {% endfor %}
-        </ul>
-        <!-- <li class="dropdown-divider"></li> -->
-    {% endif %}
-</li>
+{% if category.subcategories|length > 0 %}    
+    <a id="dropdowntree{{category.id}}" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false" class="dropdown-item dropdown-toggle">{{category.title}}</a>
+    <ul aria-labelledby="dropdowntree{{category.id}}" class="dropdown-menu border-0 shadow">
+        {% for category in category.subcategories %}
+                <li class="dropdown-submenu">
+                    {% include 'product/snippets/treeview.html' %}
+                </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <li>
+        <a tabindex="-1" href="#" class="dropdown-item">{{category.title}}</a>
+    </li>
+{% endif %}
