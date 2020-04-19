@@ -17,6 +17,10 @@ Python : All the business logic has been implemented
 SQLite : database has been used 
 Django : project developed over the Django web Framework
 
+Windows: the system has easily be configured on windows OS. For running this, we  need
+Python 3, Django 3.0
+
+
 User Module: aim is to provide all the functionality related to users. 
 Here admin can act each and every role on data and customers can able to see their data.
 Product Module : aim is to manage the product data wise
