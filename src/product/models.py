@@ -54,5 +54,15 @@ class Product(models.Model):
         return self.title
 
     def categoryBreadcrumbs(self):
-        return ' > '.join(
-            self.category.all().order_by('-level').values_list('title',flat=True))
+        categories = self.category.all().order_by('level').values('title','level')
+        if categories == None:
+            return None
+        lv = categories[0]['level']
+        breadcrumbs = categories[0]['title']
+        for p in categories[1:]:
+            if p['level'] == lv:
+                breadcrumbs += '/{}'.format(p['title'])
+            else:
+                breadcrumbs += ' > {}'.format(p['title'])
+                lv = p['level']
+        return breadcrumbs
