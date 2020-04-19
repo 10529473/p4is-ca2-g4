@@ -25,7 +25,7 @@ SECRET_KEY = '3=)2_h2t-ygn9_qy4=jrz*u-+2#rire*_n4)5k0^pq9!!f0y0a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://dbsfashionstore.northeurope.cloudapp.azure.com/']
+ALLOWED_HOSTS = ['dbsfashionstore.northeurope.cloudapp.azure.com']
 
 
 # Application definition
