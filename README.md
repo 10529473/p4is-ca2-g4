@@ -9,7 +9,14 @@
 
 **Project:** Online Fashion Store
 
-> Python, MySQL, Django
+Technology used:
+HTML : page layout has been designed
+CSS : used for designing part
+CSS Bootstrap : CSS framework used  for table system
+Python : All the business logic has been implemented 
+SQLite : database has been used 
+Django : project developed over the Django web Framework
+
 
 **GitHub Repository:** <https://github.com/10529473/p4is-ca2-g4.git>
 
