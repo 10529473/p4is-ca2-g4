@@ -17,6 +17,12 @@ Python : All the business logic has been implemented
 SQLite : database has been used 
 Django : project developed over the Django web Framework
 
+User Module: aim is to provide all the functionality related to users. 
+Here admin can act each and every role on data and customers can able to see their data.
+Product Module : aim is to manage the product data wise
+Account Module : aim is to controls the user:  like user registry
+Product Type : aim is to manage the product type
+Product Listing : aim is to manage the product display list, managed by user
 
 **GitHub Repository:** <https://github.com/10529473/p4is-ca2-g4.git>
 
