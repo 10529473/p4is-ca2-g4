@@ -23,7 +23,6 @@ class RegistrationForm(UserCreationForm):
     def clean_username(self):
         username = self.cleaned_data['username']
         try:
-            # account = Account.objects.exclude(pk=self.instance.pk).get(username=username)
             Account.objects.exclude(pk=self.instance.pk).get(username=username)
         except ObjectDoesNotExist:
             return username
@@ -44,7 +43,6 @@ class AccountAuthenticationForm(forms.ModelForm):
                 raise forms.ValidationError("Invalid login")
 
 class AccountUpdateForm(forms.ModelForm):
-
 	class Meta:
 		model = Account
 		fields = ('email', 'username', )

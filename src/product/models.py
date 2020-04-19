@@ -5,6 +5,11 @@ import json
 
 
 class Category(models.Model):
+    """
+    
+    Product categories. Treeview menu recursively generated.
+    
+    """    
     title = models.CharField(max_length=255, verbose_name="Title")
     level = models.SmallIntegerField(verbose_name='Level',default=1)
     subcategories = models.ManyToManyField('self',verbose_name="Subcategories",blank=True)
@@ -27,6 +32,11 @@ class Category(models.Model):
         return parents
 
     def getTree():
+        """Generate treeview for categories menu
+        
+        Returns:
+            list -- tree list with categories hierarchically organized
+        """        
         json_data = serializers.serialize("json", Category.objects.all())
         data = {i['pk']:i['fields'] for i in json.loads(json_data)}
         category_tree = []
@@ -39,6 +49,9 @@ class Category(models.Model):
                 
 
 class Product(models.Model):
+    """
+    Product class
+    """
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=400)
     size = models.CharField(max_length=1)
@@ -54,6 +67,11 @@ class Product(models.Model):
         return self.title
 
     def categoryBreadcrumbs(self):
+        """Product breadcrumbs for category path tracking
+        
+        Returns:
+            string -- Product category path
+        """        
         categories = self.category.all().order_by('level').values('title','level')
         if categories == None:
             return None

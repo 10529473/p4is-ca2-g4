@@ -49,7 +49,7 @@
     </div>
 </nav>
 
-
+<!-- Taken from https://bbbootstrap.com/snippets/simple-shopping-cart-coupon-code-input-text-39165166 -->
 <div class="container-fluid">
     <div class="card">
         <div class="table-responsive">
@@ -62,7 +62,7 @@
                 </thead>
                 <tbody>
                     {% for product in products %}
-                    {% include 'product/snippets/product-list-item.html' %}
+                        {% include 'product/snippets/product-list-item.html' %}
                     {% endfor %}
                 </tbody>
             </table>
